@@ -58,9 +58,14 @@ public class Exercise1 {
         Files.readAllLines(Paths.get("day2/src/main/resources/com/aoc/day2/input.txt")).forEach(line -> {
             Game game = new Game();
             game.fromString(line);
-            if (game.getMaxRed() <= 12 && game.getMaxGreen() <= 13 && game.getMaxBlue() <= 14) {
-                sum.addAndGet(game.getNumber());
-            }
+
+            // Part 1
+            //if (game.getMaxRed() <= 12 && game.getMaxGreen() <= 13 && game.getMaxBlue() <= 14) {
+            //    sum.addAndGet(game.getNumber());
+            //}
+
+            // Part 2
+            sum.addAndGet(game.getMaxBlue()*game.getMaxGreen()*game.getMaxRed());
         });
         System.out.println(sum);
     }
